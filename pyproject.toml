@@ -1,0 +1,28 @@
+[project]
+name = "jarvis-assistant"
+version = "0.2.0"
+description = "Jarvis-like multi-agent virtual assistant"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "openai>=1.52.0",
+  "pydantic>=2.9.2",
+  "python-dotenv>=1.0.1",
+  "duckduckgo-search>=6.3.0",
+  "rich>=13.9.2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.3",
+]
+
+[project.scripts]
+jarvis = "jarvis_assistant.main:run_cli"
+
+[tool.setuptools]
+packages = ["jarvis_assistant"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
